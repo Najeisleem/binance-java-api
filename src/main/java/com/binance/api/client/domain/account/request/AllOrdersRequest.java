@@ -14,9 +14,9 @@ public class AllOrdersRequest extends OrderRequest {
 
   private Integer limit;
 
-  public AllOrdersRequest(String symbol) {
+  public AllOrdersRequest(String symbol, Integer limit) {
     super(symbol);
-    this.limit = DEFAULT_LIMIT;
+    this.limit = limit;
   }
 
   public Long getOrderId() {
