@@ -233,17 +233,17 @@ public class BinanceApiAsyncRestClientImpl implements BinanceApiAsyncRestClient 
         .enqueue(new BinanceApiCallbackAdapter<>(callback));
   }
 
-  @Override
-  public void getDepositHistory(String asset, BinanceApiCallback<DepositHistory> callback) {
-    binanceApiService.getDepositHistory(asset, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis())
-        .enqueue(new BinanceApiCallbackAdapter<>(callback));
-  }
-
-  @Override
-  public void getWithdrawHistory(String asset, BinanceApiCallback<WithdrawHistory> callback) {
-    binanceApiService.getWithdrawHistory(asset, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis())
-        .enqueue(new BinanceApiCallbackAdapter<>(callback));
-  }
+//  @Override
+//  public void getDepositHistory(String asset, BinanceApiCallback<DepositHistory> callback) {
+//    binanceApiService.getDepositHistory(asset, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis())
+//        .enqueue(new BinanceApiCallbackAdapter<>(callback));
+//  }
+//
+//  @Override
+//  public void getWithdrawHistory(String asset, BinanceApiCallback<WithdrawHistory> callback) {
+//    binanceApiService.getWithdrawHistory(asset, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis())
+//        .enqueue(new BinanceApiCallbackAdapter<>(callback));
+//  }
 
   @Override
   public void getDepositAddress(String asset, BinanceApiCallback<DepositAddress> callback) {
