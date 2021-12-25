@@ -17,6 +17,8 @@ import com.binance.api.client.domain.account.LoanQueryResult;
 import com.binance.api.client.domain.account.MarginAccount;
 import com.binance.api.client.domain.account.MarginNewOrderResponse;
 import com.binance.api.client.domain.account.MarginTransaction;
+import com.binance.api.client.domain.account.MasterDepositHistory;
+import com.binance.api.client.domain.account.MasterWithdrawHistory;
 import com.binance.api.client.domain.account.MaxBorrowableQueryResult;
 import com.binance.api.client.domain.account.NewOrderResponse;
 import com.binance.api.client.domain.account.NewOrderResponseType;
@@ -219,14 +221,14 @@ public interface BinanceApiService {
   Call<WithdrawResult> withdraw(@Query("asset") String asset, @Query("address") String address, @Query("amount") String amount, @Query("name") String name, @Query("addressTag") String addressTag,
                                 @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
 
-
-  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
-  @GET("/wapi/v3/depositHistory.html")
-  Call<DepositHistory> getDepositHistory(@Query("asset") String asset, @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
-
-  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
-  @GET("/wapi/v3/withdrawHistory.html")
-  Call<WithdrawHistory> getWithdrawHistory(@Query("asset") String asset, @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
+//
+//  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+//  @GET("/wapi/v3/depositHistory.html")
+//  Call<DepositHistory> getDepositHistory(@Query("asset") String asset, @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
+//
+//  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+//  @GET("/wapi/v3/withdrawHistory.html")
+//  Call<WithdrawHistory> getWithdrawHistory(@Query("asset") String asset, @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
 
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @GET("/wapi/v3/depositAddress.html")
@@ -236,6 +238,16 @@ public interface BinanceApiService {
   @GET("/sapi/v1/sub-account/transfer/subUserHistory")
   Call<List<SubAccountTransfer>> getSubAccountTransfers(@Query("timestamp") Long timestamp);
 
+  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @GET("/sapi/v1/capital/deposit/hisrec")
+  Call<List<MasterDepositHistory>> getDepositHistory(@Query("status") Integer status, @Query("startTime") Long startTime, @Query("endTime") Long endTime,@Query("timestamp") Long timestamp);
+  
+  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @GET("/sapi/v1/capital/withdraw/history")
+  Call<List<MasterWithdrawHistory>> getWithdrawHistory(@Query("status") Integer status, @Query("startTime") Long startTime, @Query("endTime") Long endTime,@Query("timestamp") Long timestamp);
+  
+ 
+  
   // User stream endpoints
 
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER)
