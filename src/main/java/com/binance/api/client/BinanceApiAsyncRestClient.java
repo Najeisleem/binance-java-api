@@ -284,19 +284,19 @@ public interface BinanceApiAsyncRestClient {
    */
   void withdraw(String asset, String address, String amount, String name, String addressTag, BinanceApiCallback<WithdrawResult> callback);
 
-  /**
-   * Fetch account deposit history.
-   *
-   * @param callback the callback that handles the response and returns the deposit history
-   */
-  void getDepositHistory(String asset, BinanceApiCallback<DepositHistory> callback);
-
-  /**
-   * Fetch account withdraw history.
-   *
-   * @param callback the callback that handles the response and returns the withdraw history
-   */
-  void getWithdrawHistory(String asset, BinanceApiCallback<WithdrawHistory> callback);
+//  /**
+//   * Fetch account deposit history.
+//   *
+//   * @param callback the callback that handles the response and returns the deposit history
+//   */
+//  void getDepositHistory(String asset, BinanceApiCallback<DepositHistory> callback);
+//
+//  /**
+//   * Fetch account withdraw history.
+//   *
+//   * @param callback the callback that handles the response and returns the withdraw history
+//   */
+//  void getWithdrawHistory(String asset, BinanceApiCallback<WithdrawHistory> callback);
 
   /**
    * Fetch deposit address.

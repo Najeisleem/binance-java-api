@@ -14,6 +14,8 @@ import com.binance.api.client.domain.account.Account;
 import com.binance.api.client.domain.account.DepositAddress;
 import com.binance.api.client.domain.account.DepositHistory;
 import com.binance.api.client.domain.account.DustTransferResponse;
+import com.binance.api.client.domain.account.MasterDepositHistory;
+import com.binance.api.client.domain.account.MasterWithdrawHistory;
 import com.binance.api.client.domain.account.NewOrder;
 import com.binance.api.client.domain.account.NewOrderResponse;
 import com.binance.api.client.domain.account.OcoOrderResponse;
@@ -255,13 +257,13 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   }
 
   @Override
-  public DepositHistory getDepositHistory(String asset) {
-    return executeSync(binanceApiService.getDepositHistory(asset, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()));
+  public List<MasterDepositHistory> getDepositHistory(Integer status , Long startTime, Long endTime) {
+    return executeSync(binanceApiService.getDepositHistory(status, startTime ,endTime , System.currentTimeMillis()));
   }
 
   @Override
-  public WithdrawHistory getWithdrawHistory(String asset) {
-    return executeSync(binanceApiService.getWithdrawHistory(asset, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()));
+  public List<MasterWithdrawHistory> getWithdrawHistory(Integer status , Long startTime, Long endTime) {
+    return executeSync(binanceApiService.getWithdrawHistory(status, startTime ,endTime , System.currentTimeMillis()));
   }
 
   @Override

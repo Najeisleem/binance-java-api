@@ -6,6 +6,8 @@ import com.binance.api.client.domain.account.Account;
 import com.binance.api.client.domain.account.DepositAddress;
 import com.binance.api.client.domain.account.DepositHistory;
 import com.binance.api.client.domain.account.DustTransferResponse;
+import com.binance.api.client.domain.account.MasterDepositHistory;
+import com.binance.api.client.domain.account.MasterWithdrawHistory;
 import com.binance.api.client.domain.account.NewOrder;
 import com.binance.api.client.domain.account.NewOrderResponse;
 import com.binance.api.client.domain.account.OcoOrderResponse;
@@ -284,19 +286,19 @@ public interface BinanceApiRestClient {
    */
   WithdrawResult withdraw(String asset, String address, String amount, String name, String addressTag);
 
-  /**
-   * Fetch account deposit history.
-   *
-   * @return deposit history, containing a list of deposits
-   */
-  DepositHistory getDepositHistory(String asset);
-
-  /**
-   * Fetch account withdraw history.
-   *
-   * @return withdraw history, containing a list of withdrawals
-   */
-  WithdrawHistory getWithdrawHistory(String asset);
+//  /**
+//   * Fetch account deposit history.
+//   *
+//   * @return deposit history, containing a list of deposits
+//   */
+//  DepositHistory getDepositHistory(String asset);
+//
+//  /**
+//   * Fetch account withdraw history.
+//   *
+//   * @return withdraw history, containing a list of withdrawals
+//   */
+//  WithdrawHistory getWithdrawHistory(String asset);
 
   /**
    * Fetch sub-account transfer history.
@@ -342,5 +344,19 @@ public interface BinanceApiRestClient {
    * @return transfer response
    */
   DustTransferResponse convertDustToBnb(List<String> assets);
+  
+  /**
+   * Fetch account deposit history.
+   *
+   * @return deposit history, containing a list of deposits
+   */
+  List<MasterDepositHistory> getDepositHistory(Integer status, Long startTime, Long endTime);
+
+  /**
+   * Fetch account Withdraw history.
+   *
+   * @return Withdraw history, containing a list of Withdrawals
+   */
+  List<MasterWithdrawHistory> getWithdrawHistory(Integer status, Long startTime, Long endTime);
 
 }
