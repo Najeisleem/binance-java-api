@@ -305,7 +305,7 @@ public interface BinanceApiRestClient {
    *
    * @return sub-account transfers
    */
-  List<SubAccountTransfer> getSubAccountTransfers();
+  List<SubAccountTransfer> getSubAccountTransfers(Integer type);
 
   /**
    * Fetch deposit address.

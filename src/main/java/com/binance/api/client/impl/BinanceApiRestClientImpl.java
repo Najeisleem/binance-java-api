@@ -267,8 +267,8 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   }
 
   @Override
-  public List<SubAccountTransfer> getSubAccountTransfers() {
-    return executeSync(binanceApiService.getSubAccountTransfers(System.currentTimeMillis()));
+  public List<SubAccountTransfer> getSubAccountTransfers(Integer type) {
+    return executeSync(binanceApiService.getSubAccountTransfers(type, System.currentTimeMillis()));
   }
 
   @Override
