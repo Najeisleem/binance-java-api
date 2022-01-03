@@ -236,7 +236,7 @@ public interface BinanceApiService {
 
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @GET("/sapi/v1/sub-account/transfer/subUserHistory")
-  Call<List<SubAccountTransfer>> getSubAccountTransfers(@Query("type") Integer type,@Query("timestamp") Long timestamp);
+  Call<List<SubAccountTransfer>> getSubAccountTransfers(@Query("type") Integer type,@Query("startTime") Long startTime, @Query("endTime") Long endTime,@Query("timestamp") Long timestamp);
 
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @GET("/sapi/v1/capital/deposit/hisrec")

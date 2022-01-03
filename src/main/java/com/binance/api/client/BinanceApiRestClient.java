@@ -305,7 +305,7 @@ public interface BinanceApiRestClient {
    *
    * @return sub-account transfers
    */
-  List<SubAccountTransfer> getSubAccountTransfers(Integer type);
+  List<SubAccountTransfer> getSubAccountTransfers(Integer type, Long startTime, Long endTime);
 
   /**
    * Fetch deposit address.
@@ -358,5 +358,6 @@ public interface BinanceApiRestClient {
    * @return Withdraw history, containing a list of Withdrawals
    */
   List<MasterWithdrawHistory> getWithdrawHistory(Integer status, Long startTime, Long endTime);
+
 
 }
