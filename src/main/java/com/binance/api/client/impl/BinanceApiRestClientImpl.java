@@ -297,4 +297,10 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   public void closeUserDataStream(String listenKey) {
     executeSync(binanceApiService.closeAliveUserDataStream(listenKey));
   }
+  
+  @Override
+  public void transferAsset(String asset, String type, String amount) {
+    executeSync(binanceApiService.transferAsset(asset, type, amount,BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, currentTimeMillis()));
+  }
+  
 }

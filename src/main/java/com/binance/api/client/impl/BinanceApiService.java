@@ -444,5 +444,14 @@ public interface BinanceApiService {
           @Query("asset") List<String> assets,
           @Query("recvWindow") Long recvWindow,
           @Query("timestamp") Long timestamp);
+  
+  @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER, BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
+  @POST("/sapi/v1/asset/transfer")
+  Call<Void> transferAsset(
+		  @Query("asset") String asset,
+          @Query("type") String type,
+          @Query("amount") String amount,
+          @Query("recvWindow") Long recvWindow,
+          @Query("timestamp") Long timestamp);
 
 }

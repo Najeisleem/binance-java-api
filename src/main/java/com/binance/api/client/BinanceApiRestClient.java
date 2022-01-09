@@ -359,5 +359,7 @@ public interface BinanceApiRestClient {
    */
   List<MasterWithdrawHistory> getWithdrawHistory(Integer status, Long startTime, Long endTime);
 
+  void transferAsset(String asset, String type, String amount);
+
 
 }
