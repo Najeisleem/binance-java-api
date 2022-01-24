@@ -3,6 +3,7 @@ package com.binance.api.client;
 import java.util.List;
 
 import com.binance.api.client.domain.account.Account;
+import com.binance.api.client.domain.account.ApiRestriction;
 import com.binance.api.client.domain.account.DepositAddress;
 import com.binance.api.client.domain.account.DepositHistory;
 import com.binance.api.client.domain.account.DustTransferResponse;
@@ -360,6 +361,8 @@ public interface BinanceApiRestClient {
   List<MasterWithdrawHistory> getWithdrawHistory(Integer status, Long startTime, Long endTime);
 
   void transferAsset(String asset, String type, String amount);
+
+  ApiRestriction apiRestrictions();
 
 
 }

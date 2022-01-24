@@ -11,6 +11,7 @@ import com.binance.api.client.constant.BinanceApiConstants;
 import com.binance.api.client.domain.OrderType;
 import com.binance.api.client.domain.TimeInForce;
 import com.binance.api.client.domain.account.Account;
+import com.binance.api.client.domain.account.ApiRestriction;
 import com.binance.api.client.domain.account.DepositAddress;
 import com.binance.api.client.domain.account.DepositHistory;
 import com.binance.api.client.domain.account.DustTransferResponse;
@@ -302,5 +303,11 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   public void transferAsset(String asset, String type, String amount) {
     executeSync(binanceApiService.transferAsset(asset, type, amount,BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, currentTimeMillis()));
   }
+  
+  @Override
+  public ApiRestriction apiRestrictions() {
+    return executeSync(binanceApiService.apiRestrictions(currentTimeMillis()));
+  }
+  
   
 }
