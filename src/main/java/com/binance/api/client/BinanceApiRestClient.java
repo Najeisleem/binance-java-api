@@ -15,6 +15,7 @@ import com.binance.api.client.domain.account.OcoOrderResponse;
 import com.binance.api.client.domain.account.Order;
 import com.binance.api.client.domain.account.Trade;
 import com.binance.api.client.domain.account.TradeHistoryItem;
+import com.binance.api.client.domain.account.TransferHistory;
 import com.binance.api.client.domain.account.WithdrawHistory;
 import com.binance.api.client.domain.account.WithdrawResult;
 import com.binance.api.client.domain.account.request.AllOrdersRequest;
@@ -363,6 +364,10 @@ public interface BinanceApiRestClient {
   void transferAsset(String asset, String type, String amount);
 
   ApiRestriction apiRestrictions();
+
+  List<TransferHistory> getInternalTransferHistory();
+
+  List<TransferHistory> getInternalTransferHistory(String fromEmail);
 
 
 }

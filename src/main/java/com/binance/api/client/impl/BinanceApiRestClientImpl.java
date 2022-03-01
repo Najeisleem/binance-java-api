@@ -23,6 +23,7 @@ import com.binance.api.client.domain.account.OcoOrderResponse;
 import com.binance.api.client.domain.account.Order;
 import com.binance.api.client.domain.account.Trade;
 import com.binance.api.client.domain.account.TradeHistoryItem;
+import com.binance.api.client.domain.account.TransferHistory;
 import com.binance.api.client.domain.account.WithdrawHistory;
 import com.binance.api.client.domain.account.WithdrawResult;
 import com.binance.api.client.domain.account.request.AllOrdersRequest;
@@ -309,5 +310,14 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
     return executeSync(binanceApiService.apiRestrictions(currentTimeMillis()));
   }
   
+  @Override
+  public List<TransferHistory> getInternalTransferHistory() {
+    return executeSync(binanceApiService.getInternalTransferHistory(currentTimeMillis()));
+  }
+  
+  @Override
+  public List<TransferHistory> getInternalTransferHistory(String fromEmail) {
+    return executeSync(binanceApiService.getInternalTransferHistory(fromEmail ,currentTimeMillis()));
+  }
   
 }

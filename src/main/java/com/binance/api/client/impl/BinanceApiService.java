@@ -33,6 +33,7 @@ import com.binance.api.client.domain.account.SwapQuote;
 import com.binance.api.client.domain.account.SwapRecord;
 import com.binance.api.client.domain.account.Trade;
 import com.binance.api.client.domain.account.TradeHistoryItem;
+import com.binance.api.client.domain.account.TransferHistory;
 import com.binance.api.client.domain.account.WithdrawHistory;
 import com.binance.api.client.domain.account.WithdrawResult;
 import com.binance.api.client.domain.account.isolated.IsolatedMarginAccountInfo;
@@ -251,7 +252,13 @@ public interface BinanceApiService {
   @GET("/sapi/v1/account/apiRestrictions")
   Call<ApiRestriction> apiRestrictions(@Query("timestamp") Long timestamp);
   
+  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @GET("/sapi/v1/sub-account/sub/transfer/history")
+  Call<List<TransferHistory>> getInternalTransferHistory(@Query("timestamp") Long timestamp);
  
+  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @GET("/sapi/v1/sub-account/sub/transfer/history")
+  Call<List<TransferHistory>> getInternalTransferHistory(@Query("fromEmail") String fromEmail, @Query("timestamp") Long timestamp);
   
   // User stream endpoints
 
