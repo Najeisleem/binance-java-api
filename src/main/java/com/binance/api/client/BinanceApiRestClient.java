@@ -367,9 +367,7 @@ public interface BinanceApiRestClient {
 
   List<TransferHistory> getInternalTransferHistory();
 
-  List<TransferHistory> getInternalTransferHistory(String fromEmail,int page);
-
-  List<TransferHistory> getInternalTransferHistory(String toEmail,int page, String empty);
+  List<TransferHistory> getInternalTransferHistory(String toEmail,int page);
 
 
 }

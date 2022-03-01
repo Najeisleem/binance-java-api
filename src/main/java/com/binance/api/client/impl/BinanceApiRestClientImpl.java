@@ -316,13 +316,8 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   }
   
   @Override
-  public List<TransferHistory> getInternalTransferHistory(String fromEmail , int page) {
-    return executeSync(binanceApiService.getInternalTransferHistory(fromEmail ,page,currentTimeMillis()));
-  }
-  
-  @Override
-  public List<TransferHistory> getInternalTransferHistory(String toEmail,int page,String empty) {
-    return executeSync(binanceApiService.getInternalTransferHistory(toEmail ,page,currentTimeMillis(),""));
+  public List<TransferHistory> getInternalTransferHistory(String toEmail,int page) {
+    return executeSync(binanceApiService.getInternalTransferHistory(toEmail ,page,currentTimeMillis()));
   }
   
 }
