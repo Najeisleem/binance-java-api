@@ -256,7 +256,7 @@ public interface BinanceApiService {
   @GET("/sapi/v1/sub-account/sub/transfer/history")
   Call<List<TransferHistory>> getInternalTransferHistory(@Query("timestamp") Long timestamp);
  
-  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER,BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
   @GET("/sapi/v1/sub-account/sub/transfer/history")
   Call<List<TransferHistory>> getInternalTransferHistory(@Query("toEmail") String toEmail,@Query("page") Integer page, @Query("timestamp") Long timestamp);
   
