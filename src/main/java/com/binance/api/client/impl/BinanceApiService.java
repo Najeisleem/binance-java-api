@@ -258,7 +258,7 @@ public interface BinanceApiService {
  
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @GET("/sapi/v1/sub-account/sub/transfer/history")
-  Call<List<TransferHistory>> getInternalTransferHistory(@Query("toEmail") String toEmail,@Query("page") int page, @Query("timestamp") Long timestamp);
+  Call<List<TransferHistory>> getInternalTransferHistory(@Query("toEmail") String toEmail,@Query("page") Integer page, @Query("timestamp") Long timestamp);
   
   // User stream endpoints
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER)
