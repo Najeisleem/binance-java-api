@@ -352,14 +352,14 @@ public interface BinanceApiRestClient {
    *
    * @return deposit history, containing a list of deposits
    */
-  List<MasterDepositHistory> getDepositHistory(Integer status, Long startTime, Long endTime);
+  List<MasterDepositHistory> getDepositHistory(Integer status, Long startTime, Long endTime, Integer offset);
 
   /**
    * Fetch account Withdraw history.
    *
    * @return Withdraw history, containing a list of Withdrawals
    */
-  List<MasterWithdrawHistory> getWithdrawHistory(Integer status, Long startTime, Long endTime);
+  List<MasterWithdrawHistory> getWithdrawHistory(Integer status, Long startTime, Long endTime, Integer offset);
 
   void transferAsset(String asset, String type, String amount);
 
