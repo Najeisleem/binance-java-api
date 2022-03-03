@@ -47,8 +47,26 @@ public class SubAccountTransfer {
      * Transfer time
      */
     private Long time;
+    private String fromAccountType;
+    private String toAccountType;
 
-    // Setter
+    public String getFromAccountType() {
+		return fromAccountType;
+	}
+
+	public void setFromAccountType(String fromAccountType) {
+		this.fromAccountType = fromAccountType;
+	}
+
+	public String getToAccountType() {
+		return toAccountType;
+	}
+
+	public void setToAccountType(String toAccountType) {
+		this.toAccountType = toAccountType;
+	}
+
+	// Setter
     public void setCounterParty(String counterParty) {
         this.counterParty = counterParty;
     }
@@ -125,6 +143,8 @@ public class SubAccountTransfer {
                 .append("status", this.status)
                 .append("tranId", this.tranId)
                 .append("time", this.time)
+                .append("fromAccountType", this.fromAccountType)
+                .append("toAccountType", this.toAccountType)
                 .toString();
     }
 
