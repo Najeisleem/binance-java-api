@@ -260,13 +260,13 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   }
 
   @Override
-  public List<MasterDepositHistory> getDepositHistory(Integer status , Long startTime, Long endTime, Integer offset) {
-    return executeSync(binanceApiService.getDepositHistory(status, startTime ,endTime ,offset, System.currentTimeMillis()));
+  public List<MasterDepositHistory> getDepositHistory(Integer status , Long startTime, Long endTime) {
+    return executeSync(binanceApiService.getDepositHistory(status, startTime ,endTime , System.currentTimeMillis()));
   }
 
   @Override
-  public List<MasterWithdrawHistory> getWithdrawHistory(Integer status , Long startTime, Long endTime,Integer offset) {
-    return executeSync(binanceApiService.getWithdrawHistory(status, startTime ,endTime ,offset, System.currentTimeMillis()));
+  public List<MasterWithdrawHistory> getWithdrawHistory(Integer status , Long startTime, Long endTime) {
+    return executeSync(binanceApiService.getWithdrawHistory(status, startTime ,endTime , System.currentTimeMillis()));
   }
 
   @Override

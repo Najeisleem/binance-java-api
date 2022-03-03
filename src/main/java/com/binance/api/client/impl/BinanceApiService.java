@@ -242,11 +242,11 @@ public interface BinanceApiService {
 
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @GET("/sapi/v1/capital/deposit/hisrec")
-  Call<List<MasterDepositHistory>> getDepositHistory(@Query("status") Integer status, @Query("startTime") Long startTime, @Query("endTime") Long endTime,@Query("offset") Integer offset,@Query("timestamp") Long timestamp);
+  Call<List<MasterDepositHistory>> getDepositHistory(@Query("status") Integer status, @Query("startTime") Long startTime, @Query("endTime") Long endTime,@Query("timestamp") Long timestamp);
   
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @GET("/sapi/v1/capital/withdraw/history")
-  Call<List<MasterWithdrawHistory>> getWithdrawHistory(@Query("status") Integer status, @Query("startTime") Long startTime, @Query("endTime") Long endTime,@Query("offset") Integer offset,@Query("timestamp") Long timestamp);
+  Call<List<MasterWithdrawHistory>> getWithdrawHistory(@Query("status") Integer status, @Query("startTime") Long startTime, @Query("endTime") Long endTime,@Query("timestamp") Long timestamp);
   
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @GET("/sapi/v1/account/apiRestrictions")
