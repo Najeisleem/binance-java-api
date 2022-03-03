@@ -47,5 +47,9 @@ public class SubAccountTransfer {
      * Transfer time
      */
     private Long time;
+    
+    private String fromAccountType;
+    
+    private String toAccountType;
 
 }
