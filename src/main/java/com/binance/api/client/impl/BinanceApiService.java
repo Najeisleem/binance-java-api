@@ -1,6 +1,7 @@
 package com.binance.api.client.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.binance.api.client.constant.BinanceApiConstants;
 import com.binance.api.client.domain.OrderSide;
@@ -464,5 +465,15 @@ public interface BinanceApiService {
           @Query("amount") String amount,
           @Query("recvWindow") Long recvWindow,
           @Query("timestamp") Long timestamp);
+  
+  @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER, BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
+  @GET("/sapi/v1/asset/transfer")
+  Call<Map<String, Object>> transferAsset(
+		  @Query("type") String type,
+          @Query("startTime") Long startTime,
+          @Query("endTime") Long endTime,
+          @Query("size") Integer size,
+          @Query("timestamp") Long timestamp);
+  
 
 }

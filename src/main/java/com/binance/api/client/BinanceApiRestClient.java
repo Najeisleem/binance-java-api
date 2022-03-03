@@ -1,6 +1,7 @@
 package com.binance.api.client;
 
 import java.util.List;
+import java.util.Map;
 
 import com.binance.api.client.domain.account.Account;
 import com.binance.api.client.domain.account.ApiRestriction;
@@ -368,6 +369,8 @@ public interface BinanceApiRestClient {
   List<TransferHistory> getInternalTransferHistory();
 
   List<TransferHistory> getInternalTransferHistory(String toEmail,Integer page);
+
+  Map<String, Object> transferAsset(String type, Long startTime, Long endTime);
 
 
 }

@@ -4,6 +4,7 @@ import static com.binance.api.client.impl.ApiServiceGenerator.executeSync;
 import static java.lang.System.currentTimeMillis;
 
 import java.util.List;
+import java.util.Map;
 
 import com.binance.api.client.BinanceApiRestClient;
 import com.binance.api.client.config.BinanceApiConfig;
@@ -304,6 +305,11 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   @Override
   public void transferAsset(String asset, String type, String amount) {
     executeSync(binanceApiService.transferAsset(asset, type, amount,BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, currentTimeMillis()));
+  }
+  
+  @Override
+  public Map<String, Object> transferAsset(String type, Long startTime, Long endTime) {
+    return executeSync(binanceApiService.transferAsset(type, startTime, endTime, 100, currentTimeMillis()));
   }
   
   @Override
