@@ -327,4 +327,14 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
     return executeSync(binanceApiService.getInternalTransferHistory(toEmail ,page,currentTimeMillis()));
   }
   
+  @Override
+  public List<Map<String, Object>> getEarnWithdrawals(String lendingType){
+	  return executeSync(binanceApiService.getEarnWithdrawals(lendingType ,100L,currentTimeMillis()));
+  }
+  
+  @Override
+  public List<Map<String, Object>> getEarnDeposits(String lendingType){
+	  return executeSync(binanceApiService.getEarnDeposits(lendingType ,100L,currentTimeMillis()));
+  }
+  
 }

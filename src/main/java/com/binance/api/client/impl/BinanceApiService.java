@@ -261,6 +261,16 @@ public interface BinanceApiService {
   @GET("/sapi/v1/sub-account/sub/transfer/history")
   Call<List<TransferHistory>> getInternalTransferHistory(@Query("toEmail") String toEmail,@Query("page") Integer page, @Query("timestamp") Long timestamp);
   
+  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @GET("/sapi/v1/lending/union/purchaseRecord")
+  Call<List<Map<String, Object>>> getEarnWithdrawals(@Query("lendingType") String lendingType,@Query("size") Long size,@Query("timestamp") Long timestamp);
+  
+  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @GET("/sapi/v1/lending/union/redemptionRecord")
+  Call<List<Map<String, Object>>> getEarnDeposits(@Query("lendingType") String lendingType,@Query("size") Long size,@Query("timestamp") Long timestamp);
+
+
+  
   // User stream endpoints
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER)
   @POST("/api/v1/userDataStream")
