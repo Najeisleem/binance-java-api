@@ -328,13 +328,13 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   }
   
   @Override
-  public List<Map<String, Object>> getEarnWithdrawals(String lendingType){
-	  return executeSync(binanceApiService.getEarnWithdrawals(lendingType ,100L,currentTimeMillis()));
+  public List<Map<String, Object>> getEarnWithdrawals(String lendingType, Long startTime, Long endTime){
+	  return executeSync(binanceApiService.getEarnWithdrawals(lendingType ,100L,startTime, endTime,currentTimeMillis()));
   }
   
   @Override
-  public List<Map<String, Object>> getEarnDeposits(String lendingType){
-	  return executeSync(binanceApiService.getEarnDeposits(lendingType ,100L,currentTimeMillis()));
+  public List<Map<String, Object>> getEarnDeposits(String lendingType, Long startTime, Long endTime){
+	  return executeSync(binanceApiService.getEarnDeposits(lendingType ,100L,startTime, endTime,currentTimeMillis()));
   }
   
 }

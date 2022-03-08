@@ -372,9 +372,9 @@ public interface BinanceApiRestClient {
 
   Map<String, Object> transferAsset(String type, Long startTime, Long endTime);
 
-  List<Map<String, Object>> getEarnWithdrawals(String lendingType);
+  List<Map<String, Object>> getEarnWithdrawals(String lendingType,Long startTime, Long endTime);
 
-  List<Map<String, Object>> getEarnDeposits(String lendingType);
+  List<Map<String, Object>> getEarnDeposits(String lendingType,Long startTime, Long endTime);
 
 
 }
