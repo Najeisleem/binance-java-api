@@ -22,6 +22,7 @@ import com.binance.api.client.domain.account.NewOrder;
 import com.binance.api.client.domain.account.NewOrderResponse;
 import com.binance.api.client.domain.account.OcoOrderResponse;
 import com.binance.api.client.domain.account.Order;
+import com.binance.api.client.domain.account.SubAccount;
 import com.binance.api.client.domain.account.Trade;
 import com.binance.api.client.domain.account.TradeHistoryItem;
 import com.binance.api.client.domain.account.TransferHistory;
@@ -274,6 +275,18 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   public List<SubAccountTransfer> getSubAccountTransfers(Integer type, Long startTime, Long endTime) {
     return executeSync(binanceApiService.getSubAccountTransfers(type,startTime,endTime, System.currentTimeMillis()));
   }
+  
+  @Override
+  public SubAccount createVirtualSubAccount(String subAccountString) {
+    return executeSync(binanceApiService.createVirtualSubAccount(subAccountString, System.currentTimeMillis()));
+  }
+  
+  @Override
+  public void universalTransfer(String toEmail,String fromAccountType,String toAccountType,String asset,String amount) {
+      executeSync(binanceApiService.universalTransfer(toEmail,fromAccountType,toAccountType, asset,amount,System.currentTimeMillis()));
+  }
+  
+  
 
   @Override
   public DepositAddress getDepositAddress(String asset) {

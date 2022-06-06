@@ -14,6 +14,7 @@ import com.binance.api.client.domain.account.NewOrder;
 import com.binance.api.client.domain.account.NewOrderResponse;
 import com.binance.api.client.domain.account.OcoOrderResponse;
 import com.binance.api.client.domain.account.Order;
+import com.binance.api.client.domain.account.SubAccount;
 import com.binance.api.client.domain.account.Trade;
 import com.binance.api.client.domain.account.TradeHistoryItem;
 import com.binance.api.client.domain.account.TransferHistory;
@@ -375,6 +376,10 @@ public interface BinanceApiRestClient {
   List<Map<String, Object>> getEarnWithdrawals(String lendingType,Long startTime, Long endTime);
 
   List<Map<String, Object>> getEarnDeposits(String lendingType,Long startTime, Long endTime);
+
+  SubAccount createVirtualSubAccount(String subAccountString);
+
+  void universalTransfer(String toEmail, String fromAccountType, String toAccountType, String asset, String amount);
 
 
 }

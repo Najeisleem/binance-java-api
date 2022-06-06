@@ -29,6 +29,7 @@ import com.binance.api.client.domain.account.Order;
 import com.binance.api.client.domain.account.Pool;
 import com.binance.api.client.domain.account.RepayQueryResult;
 import com.binance.api.client.domain.account.SideEffectType;
+import com.binance.api.client.domain.account.SubAccount;
 import com.binance.api.client.domain.account.SwapHistory;
 import com.binance.api.client.domain.account.SwapQuote;
 import com.binance.api.client.domain.account.SwapRecord;
@@ -256,7 +257,16 @@ public interface BinanceApiService {
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @GET("/sapi/v1/sub-account/sub/transfer/history")
   Call<List<TransferHistory>> getInternalTransferHistory(@Query("timestamp") Long timestamp);
+  
+  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @POST("/sapi/v1/sub-account/virtualSubAccount")
+  Call<SubAccount> createVirtualSubAccount(@Query("subAccountString") String subAccountString,@Query("timestamp") Long timestamp);
  
+  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @POST("/sapi/v1/sub-account/universalTransfer")
+  Call<Void> universalTransfer(@Query("toEmail") String toEmail,@Query("fromAccountType") String fromAccountType,@Query("toAccountType") String toAccountType,@Query("asset") String asset,@Query("amount") String amount,@Query("timestamp") Long timestamp);
+ 
+  
   @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER,BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
   @GET("/sapi/v1/sub-account/sub/transfer/history")
   Call<List<TransferHistory>> getInternalTransferHistory(@Query("toEmail") String toEmail,@Query("page") Integer page, @Query("timestamp") Long timestamp);
