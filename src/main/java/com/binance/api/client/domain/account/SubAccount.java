@@ -11,11 +11,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class SubAccount {
 	String email;
 
+	
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
 	@Override
 	public String toString() {
 		return "SubAccount [email=" + email + "]";
 	}
-	
 
 	
 }
