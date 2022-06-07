@@ -262,7 +262,7 @@ public interface BinanceApiService {
   @POST("/sapi/v1/sub-account/virtualSubAccount")
   Call<SubAccount> createVirtualSubAccount(@Query("subAccountString") String subAccountString,@Query("timestamp") Long timestamp);
  
-  @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+  @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER,BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
   @POST("/sapi/v1/sub-account/universalTransfer")
   Call<Void> universalTransfer(@Query("toEmail") String toEmail,@Query("fromAccountType") String fromAccountType,@Query("toAccountType") String toAccountType,@Query("asset") String asset,@Query("amount") String amount,@Query("timestamp") Long timestamp);
  
