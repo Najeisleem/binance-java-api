@@ -3,6 +3,7 @@ package com.binance.api.client.impl;
 import static com.binance.api.client.impl.ApiServiceGenerator.executeSync;
 import static java.lang.System.currentTimeMillis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -326,7 +327,7 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   }
   
   @Override
-  public  Map<String, Object> getUserAsset(String asset, Boolean needBtcValuation) {
+  public  ArrayList<Map<String, Object>> getUserAsset(String asset, Boolean needBtcValuation) {
     return executeSync(binanceApiService.getUserAsset(asset, needBtcValuation, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, currentTimeMillis()));
   }
   

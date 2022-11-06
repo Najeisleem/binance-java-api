@@ -1,5 +1,6 @@
 package com.binance.api.client.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -496,7 +497,7 @@ public interface BinanceApiService {
   
   @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER, BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
   @POST("/sapi/v3/asset/getUserAsset")
-  Call<Map<String, Object>> getUserAsset(
+  Call<ArrayList<Map<String, Object>>> getUserAsset(
 		  @Query("asset") String asset,
           @Query("needBtcValuation") Boolean needBtcValuation,
           @Query("recvWindow") Long recvWindow,

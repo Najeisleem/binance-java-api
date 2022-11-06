@@ -1,5 +1,6 @@
 package com.binance.api.client;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -381,7 +382,7 @@ public interface BinanceApiRestClient {
 
   void universalTransfer(String toEmail, String fromAccountType, String toAccountType, String asset, String amount);
 
-  Map<String, Object> getUserAsset(String asset,Boolean needBtcValuation) ;
+  ArrayList<Map<String, Object>> getUserAsset(String asset,Boolean needBtcValuation) ;
 
 
 }
