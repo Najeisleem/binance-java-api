@@ -494,5 +494,12 @@ public interface BinanceApiService {
           @Query("size") Integer size,
           @Query("timestamp") Long timestamp);
   
+  @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER, BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
+  @POST("/sapi/v3/asset/getUserAsset")
+  Call<Map<String, Object>> getUserAsset(
+		  @Query("asset") String asset,
+          @Query("needBtcValuation") Boolean needBtcValuation,
+          @Query("recvWindow") Long recvWindow,
+          @Query("timestamp") Long timestamp);
 
 }

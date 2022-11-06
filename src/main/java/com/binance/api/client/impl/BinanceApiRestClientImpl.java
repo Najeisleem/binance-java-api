@@ -326,6 +326,11 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   }
   
   @Override
+  public  Map<String, Object> getUserAsset(String asset, Boolean needBtcValuation) {
+    return executeSync(binanceApiService.getUserAsset(asset, needBtcValuation, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, currentTimeMillis()));
+  }
+  
+  @Override
   public ApiRestriction apiRestrictions() {
     return executeSync(binanceApiService.apiRestrictions(currentTimeMillis()));
   }

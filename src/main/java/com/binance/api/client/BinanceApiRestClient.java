@@ -381,5 +381,7 @@ public interface BinanceApiRestClient {
 
   void universalTransfer(String toEmail, String fromAccountType, String toAccountType, String asset, String amount);
 
+  Map<String, Object> getUserAsset(String asset,Boolean needBtcValuation) ;
+
 
 }
