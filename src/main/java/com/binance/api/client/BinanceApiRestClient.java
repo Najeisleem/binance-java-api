@@ -384,5 +384,6 @@ public interface BinanceApiRestClient {
 
   ArrayList<Map<String, Object>> getUserAsset(String asset,Boolean needBtcValuation) ;
 
+  Map<String, Object> transferToMaster(String asset,String amount);
 
 }

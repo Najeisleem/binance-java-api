@@ -356,4 +356,10 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
 	  return executeSync(binanceApiService.getEarnDeposits(lendingType ,100L,startTime, endTime,currentTimeMillis()));
   }
   
+  @Override
+  public Map<String, Object> transferToMaster(String asset,String amount){
+	  return executeSync(binanceApiService.transferToMaster(asset,amount,currentTimeMillis()));
+  }
+  
+  
 }
