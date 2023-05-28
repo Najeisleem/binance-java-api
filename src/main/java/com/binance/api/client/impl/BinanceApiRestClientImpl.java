@@ -287,8 +287,11 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
       executeSync(binanceApiService.universalTransfer(toEmail,fromAccountType,toAccountType, asset,amount,System.currentTimeMillis()));
   }
   
+  @Override
+  public Map<String, Object> enableSubAccountFutures(String email) {
+    return executeSync(binanceApiService.enableSubAccountFutures(email, currentTimeMillis()));
+  }
   
-
   @Override
   public DepositAddress getDepositAddress(String asset) {
     return executeSync(binanceApiService.getDepositAddress(asset, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()));

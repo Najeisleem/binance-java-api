@@ -386,4 +386,6 @@ public interface BinanceApiRestClient {
 
   Map<String, Object> transferToMaster(String asset,String amount);
 
+  Map<String, Object> enableSubAccountFutures(String email);
+
 }
