@@ -289,7 +289,7 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   
   @Override
   public Map<String, Object> enableSubAccountFutures(String email) {
-    return executeSync(binanceApiService.enableSubAccountFutures(email, currentTimeMillis()));
+    return executeSync(binanceApiService.enableSubAccountFutures(email, System.currentTimeMillis()));
   }
   
   @Override
