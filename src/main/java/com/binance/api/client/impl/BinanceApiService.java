@@ -275,7 +275,7 @@ public interface BinanceApiService {
   @POST("/sapi/v1/sub-account/transfer/subToMaster")
   Call<Map<String, Object>> transferToMaster(@Query("asset") String asset, @Query("amount") String amount, @Query("timestamp") Long timestamp);
  
-  @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_APIKEY_HEADER,BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
+  @Headers({BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER})
   @POST("/sapi/v1/sub-account/futures/enable")
   Call<Map<String, Object>> enableSubAccountFutures(@Query("email") String email,@Query("timestamp") Long timestamp);
   
